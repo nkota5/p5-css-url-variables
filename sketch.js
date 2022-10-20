@@ -1,7 +1,11 @@
 
 let clr = 'red';
 let clr_input;
-let num_input; 
+let num_input;
+let img;
+function preload(){
+  img = loadImage('./assets/pic1.png');
+}  
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
@@ -21,7 +25,7 @@ function setup() {
 }
 
 function draw() {
- 
+  image(img, mouseX, mouseY);
   stroke('red');
   line(random(width), random(height), random(width), random(height));
   //on button press
@@ -31,6 +35,7 @@ function draw() {
     var href = setParams('./p2', 'color', clr); //set URL navigation to include clr value
     href = setParams(href, 'num', num); //set URL navigation to include clr value
     window.location.href = href; //navigate to URL set above
+    
   });
 
 }
